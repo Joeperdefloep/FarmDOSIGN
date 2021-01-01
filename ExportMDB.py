@@ -8,7 +8,8 @@ requires mdbtools to be installed. `sudo apt install mdbtools`
 """
 import sys, subprocess, os
 from io import StringIO
-import pandas
+import pandas as pd
+from pathlib import Path
 VERBOSE = True
 
 def mdb_to_pandas(database_path):
@@ -32,4 +33,6 @@ def mdb_to_pandas(database_path):
             out_tables[table] = pd.read_csv(temp_io)
     return out_tables
 
-inputDB = mdb_to_pandas('/home/joempie/FarmDESIGN/Input/FarmDB.mdb')
+inputDB = mdb_to_pandas(Path('./Input/FarmDB.mdb'))
+
+print(inputDB)
