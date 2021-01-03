@@ -130,3 +130,4 @@ dmypy.json
 
 # mdb databases: these are not mine!
 .mdb
+/input/
